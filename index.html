@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE YOU TIMER</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        #hearts-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .random-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: heartbeat 1.5s infinite;
+            transform-origin: center;
+        }
+
+        .random-heart.red {
+            color: red;
+        }
+
+        .random-heart.pink {
+            color: pink;
+        }
+
+        .random-heart.orange {
+            color: orange;
+        }
+
+        #timer {
+            font-size: 2rem;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #ff6f91;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #interval-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 2rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #message {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            background: rgba(255, 182, 193, 1); /* Default Pastel Pink */
+            color: #6a097d;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 2s, background-color 2s;
+        }
+
+        .message-hearts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .message-heart {
+            font-size: 1.5rem;
+            color: red;
+            animation: fadeOut 1s linear;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>LOVE YOU TIMER</h1>
+    <div id="input-container">
+        <label for="urgency">Wie dringend benötigst du ein wenig Liebe?</label>
+        <select id="urgency">
+            <option value="very-fast">Sehr schnell</option>
+            <option value="fast">Schnell</option>
+            <option value="few-minutes">In ein paar Minuten</option>
+            <option value="not-now">Hat noch Zeit</option>
+            <option value="much-later">Viel später</option>
+            <option value="no-love">Ich brauch grad keine Liebe</option>
+            <option value="pari-mode">PaRi - NOTFALLMODUS</option>
+        </select>
+        <button onclick="startBasedOnUrgency()">Start</button>
+    </div>
+    <div id="hearts-container"></div>
+    <div id="timer">--:--</div>
+    <div id="interval-message"></div>
+    <div id="message">
+        <div id="love-message"></div>
+        <div class="message-hearts" id="message-hearts"></div>
+    </div>
+    <script>
+        console.log("Insert JavaScript logic here for the timer and animations.");
+    </script>
+</body>
+</html>
